@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+<head>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector("#form").onsubmit = function(){
+        rollno = document.querySelector("#rollno").value;
+        Course = document.querySelector("#Course").value;
+        localStorage.setItem("rollno",rollno)
+        localStorage.setItem("Course",Course)
+        
+    };
+    });
+    </script>
+    <title>LMS Quiz</title>
+    </head>
+    <body>
+    <form id="form" action="question1.html">
+        <input id = "rollno" autocomplete="off" autofocus placeholder="rollno" type="text">
+        <input id = "Course" autocomplete="off" autofocus placeholder="Course" type="text">
+        <input type="submit">
+    </form>
+</body>
+</html>

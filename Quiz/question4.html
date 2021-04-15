@@ -1,0 +1,51 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+form{
+    text-align:center;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    
+        
+         document.getElementById("rollno").innerHTML= localStorage.getItem("rollno")
+        document.getElementById("Course").innerHTML= localStorage.getItem("Course")
+        
+  
+    });
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector("#form").onsubmit = function(){
+       console.log(document.getElementById("form").value);
+      let value= document.querySelector('input[name="gender"]:checked').value;  
+      console.log(value);
+      localStorage.setItem("question4Answer",value)
+    };
+    });
+
+    </script>
+    <title>LMS Quiz</title>
+    </head>
+    <body>
+    rollno = <span id = "rollno"></span>
+
+    Course= <span id = "Course" ></span>
+
+    <form id="form" action="question5.html">
+  <p>Which of the following property is used to increase or decrease the size of a font?</p>
+  <input type="radio" id="font-size" name="gender" value="font-size">
+  <label for="male">font-size</label><br>
+  <input type="radio" id="font" name="gender" value="font">
+  <label for="female">font</label><br>
+  <input type="radio" id="font-variant" name="gender" value="font-variant">
+  <label for="other">font-variant</label>
+  <br>
+  <input type="radio" id="font-weight" name="gender" value="font-weight">
+  <label for="other">font-weight</label>
+<br>
+<br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

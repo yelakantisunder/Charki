@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+form{
+    text-align:center;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    //document.querySelector("#form").onsubmit = function(){
+        //rollno = document.querySelector("#rollno").value;
+        //Course = document.querySelector("#Course").value;
+        
+         document.getElementById("rollno").innerHTML= localStorage.getItem("rollno")
+        document.getElementById("Course").innerHTML= localStorage.getItem("Course")
+        
+   // };
+    });
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector("#form").onsubmit = function(){
+       console.log(document.getElementById("form").value);
+      let value= document.querySelector('input[name="gender"]:checked').value;  
+      console.log(value);
+      localStorage.setItem("question3Answer",value)
+    };
+    });
+
+    </script>
+    <title>LMS Quiz</title>
+    </head>
+    <body>
+    rollno = <span id = "rollno"></span>
+
+    Course= <span id = "Course" ></span>
+
+    <form id="form" action="question4.html">
+  <p>Which of these is not a way to add CSS to HTML elements?</p>
+  <input type="radio" id="Inline" name="gender" value="Inline">
+  <label for="male">Inline</label><br>
+  <input type="radio" id="Internal" name="gender" value="Internal">
+  <label for="female">Internal</label><br>
+  <input type="radio" id="Vertical" name="gender" value="Vertical">
+  <label for="other">Vertical</label>
+  <br>
+  <input type="radio" id="External" name="gender" value="External">
+  <label for="other">External</label>
+<br>
+<br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

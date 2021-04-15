@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+form{
+    text-align:center;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    //document.querySelector("#form").onsubmit = function(){
+        //rollno = document.querySelector("#rollno").value;
+        //Course = document.querySelector("#Course").value;
+        
+         document.getElementById("rollno").innerHTML= localStorage.getItem("rollno")
+        document.getElementById("Course").innerHTML= localStorage.getItem("Course")
+        
+   // };
+    });
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector("#form").onsubmit = function(){
+       console.log(document.getElementById("form").value);
+      let value= document.querySelector('input[name="gender"]:checked').value;  
+      console.log(value);
+      localStorage.setItem("question2Answer",value)
+    };
+    });
+
+    </script>
+    <title>LMS Quiz</title>
+    </head>
+    <body>
+    rollno = <span id = "rollno"></span>
+
+    Course= <span id = "Course" ></span>
+
+    <form id="form" action="question3.html">
+  <p>HTML is considered as</p>
+  <input type="radio" id="High Level Language" name="gender" value="High Level Language">
+  <label for="male">High Level Language</label><br>
+  <input type="radio" id="OOP Language" name="gender" value="OOP Language">
+  <label for="female">OOP Language</label><br>
+  <input type="radio" id="Programming Language" name="gender" value="Programming Language">
+  <label for="other">Programming Language</label>
+  <br>
+  <input type="radio" id="Markup Language" name="gender" value="Markup Language">
+  <label for="other">Markup Language</label>
+<br>
+<br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+form{
+    text-align:center;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    //document.querySelector("#form").onsubmit = function(){
+        //rollno = document.querySelector("#rollno").value;
+        //Course = document.querySelector("#Course").value;
+        
+        document.getElementById("rollno").innerHTML= localStorage.getItem("rollno")
+        document.getElementById("Course").innerHTML= localStorage.getItem("Course")
+        
+   // };
+    });
+    document.addEventListener('DOMContentLoaded',function(){
+    document.querySelector("#form").onsubmit = function(){
+       console.log(document.getElementById("form").value);
+      let value= document.querySelector('input[name="gender"]:checked').value;  
+      console.log(value);
+      localStorage.setItem("question1Answer",value)
+    };
+    });
+
+    </script>
+    <title>LMS Quiz</title>
+    </head>
+    <body>
+    rollno = <span id = "rollno"></span>
+
+    Course= <span id = "Course" ></span>
+
+    <form id="form" action="question2.html">
+  <p>HTML program can be read and rendered by</p>
+  <input type="radio" id="Compiler" name="gender" value="Compiler">
+  <label for="male">Compiler</label><br>
+  <input type="radio" id="Server" name="gender" value="Server">
+  <label for="female">Server</label><br>
+  <input type="radio" id="Web Browser" name="gender" value="Web Browser">
+  <label for="other">Web Browser</label>
+  <br>
+  <input type="radio" id="Interpreter" name="gender" value="Interpreter">
+  <label for="other">Interpreter</label>
+<br>
+<br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
